@@ -4,10 +4,14 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+
+
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -31,9 +35,11 @@ public class FinalOrderList extends AppCompatActivity {
         grandTotal.setText("Grand Total: " + totalPrice + "/-");
     }
 
+   
+
     public void goToUpi(View view) {
 
-        Uri uri = Uri.parse("upi://pay?pa=8866616231@upi&pn=Aayushi%20Shah&tn=Test%20for%20Deeplinking&am=1&cu=INR&url=https://mystar.co"); // missing 'http://' will cause crashed
+        Uri uri = Uri.parse("upi://pay?pa=9572544000@upi&pn=Abhishek%20Kumar&tn=IIIP%20FOOOD%20APP&am="+totalPrice+"&cu=INR&url=https://mystar.co"); // missing 'http://' will cause crashed
         //Log.d(TAG, "onClick: uri: "+uri);
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivityForResult(intent, 1);
@@ -41,3 +47,6 @@ public class FinalOrderList extends AppCompatActivity {
 
     }
 }
+
+
+
